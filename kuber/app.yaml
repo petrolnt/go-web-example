@@ -1,0 +1,54 @@
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: go-web-example
+spec: {}
+status: {}
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: go-web-example
+  name: go-web-example
+  namespace: go-web-example
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: go-web-example
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: go-web-example
+    spec:
+      containers:
+      - image: petrolnt/web-v1:latest
+        name: web-v1
+        resources: {}
+status: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-web-example-svc
+spec:
+  selector:
+    app: go-web-example
+  type: ClusterIP
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 80
+
+
