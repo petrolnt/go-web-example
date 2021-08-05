@@ -1,5 +1,4 @@
 ---
-
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -19,7 +18,7 @@ metadata:
   name: go-web-example
   namespace: go-web-example
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: go-web-example
