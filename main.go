@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	createHealthyFile()
+	//createHealthyFile()
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		var reqPath string
 		reqPath = r.URL.Path
