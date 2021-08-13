@@ -7,17 +7,15 @@ import (
 )
 
 func main() {
-	//createHealthyFile()
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		var reqPath string
-		reqPath = r.URL.Path
+		reqPath := r.URL.Path
 		switch reqPath {
 		case "/":
 			fmt.Fprintf(w, "Hello Go!")
 		case "/health":
 			var health bool
 			health = checkHealth()
-			if health == true {
+			if health {
 				fmt.Fprintf(w, "Healthy")
 			} else {
 				w.WriteHeader(http.StatusInternalServerError)
@@ -25,7 +23,7 @@ func main() {
 			}
 		case "/make-healthy":
 			res := createHealthyFile()
-			if res == true {
+			if res {
 				fmt.Fprintf(w, "Done!")
 			} else {
 				w.WriteHeader(http.StatusInternalServerError)
@@ -33,7 +31,7 @@ func main() {
 			}
 		case "/make-unhealthy":
 			res := removeHealthyFile()
-			if res == true {
+			if res {
 				fmt.Fprintf(w, "Done!")
 			} else {
 				w.WriteHeader(http.StatusInternalServerError)
