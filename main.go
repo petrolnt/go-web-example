@@ -11,7 +11,7 @@ func main() {
 		reqPath := r.URL.Path
 		switch reqPath {
 		case "/":
-			fmt.Fprintf(w, "Hello Go!")
+			fmt.Fprintf(w, "Hello GoLang!")
 		case "/health":
 			var health bool
 			health = checkHealth()
