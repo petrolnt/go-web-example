@@ -19,7 +19,7 @@ func main() {
 				fmt.Fprintf(w, "Healthy")
 			} else {
 				w.WriteHeader(http.StatusInternalServerError)
-				w.Write([]byte("500 - Site is in unhealthy state!"))
+				w.Write([]byte("Error 500 - Site is in unhealthy state!"))
 			}
 		case "/make-healthy":
 			res := createHealthyFile()
