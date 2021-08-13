@@ -27,7 +27,7 @@ func main() {
 				fmt.Fprintf(w, "Done!")
 			} else {
 				w.WriteHeader(http.StatusInternalServerError)
-				w.Write([]byte("500 - Set healthy state failed"))
+				w.Write([]byte("Error 500 - Set healthy state failed"))
 			}
 		case "/make-unhealthy":
 			res := removeHealthyFile()
