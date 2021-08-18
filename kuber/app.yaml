@@ -8,7 +8,6 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: go-web-example
   name: go-web-example
@@ -20,7 +19,6 @@ spec:
       app: go-web-example
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: go-web-example
     spec:
