@@ -39,7 +39,7 @@ pipeline {
         stage('Deploy to local K8S'){
             steps{
                 script{
-                    kubernetesDeploy(configs: "kuber/app.yaml", kubeconfigId: "test_eks1")
+                    kubernetesDeploy(configs: "kuber/app.yaml", kubeconfigId: "test_eks")
                 }
             }
         }
