@@ -1,7 +1,7 @@
 //@Library('utils@main') import net.petrolnt.utilities.*
 @Library('utils@main')_
 
-node { 
+pipeline { 
     environment { 
         registry = "petrolnt/web-v1" 
         registryCredential = 'dockerhub_petrol' 
